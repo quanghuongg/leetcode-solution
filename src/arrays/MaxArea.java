@@ -255,9 +255,6 @@ public class MaxArea {
         List<List<Integer>> res = new ArrayList<>();
         int size = nums.length;
         for (int i = 0; i < size - 1; i++) {
-//            if (res.size() > 0 && nums[i] == res.get(res.size() - 1).get(0)) {
-//                continue;
-//            }
             for (int j = i + 1; j < size; j++) {
                 int val = -nums[i] - nums[j];
                 int find = binarySearch(nums, j + 1, size - 1, val);
