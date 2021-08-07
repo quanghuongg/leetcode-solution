@@ -278,7 +278,7 @@ public class MaxArea {
 //        System.out.println(compute_hash("eat"));
 //        System.out.println(compute_hash("tea"));
 //        System.out.println(compute_hash("ate"));
-//        System.out.println(combinationSum(new int[]{2, 3, 5}, 8));
+        System.out.println(combinationSum(new int[]{2, 3, 5}, 8));
 
 //        System.out.println(isoMorphic("bbbaaaba", "aaabbbba") ? 1 : 0);
 

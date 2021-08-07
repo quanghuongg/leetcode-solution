@@ -33,6 +33,24 @@ public class Combination2 {
         findNumbers(k, ans, arr, target, 0, temp);
         return ans;
     }
+
+    static void findNumbers(int k, List<List<Integer>> ans, List<Integer> arr, int sum, int index, List<Integer> temp) {
+        if (sum == 0) {
+            if (temp.size() == k) {
+                ans.add(new ArrayList<>(temp));
+            }
+            return;
+        }
+
+        for (int i = index; i < arr.size(); i++) {
+            if ((sum - arr.get(i)) >= 0 && temp.size() < k) {
+                temp.add(arr.get(i));
+                findNumbers(k, ans, arr, sum - arr.get(i), i + 1, temp);
+                temp.remove(temp.size() - 1);
+            }
+        }
+    }
+
     static int k = Integer.MAX_VALUE;
     public int numSquares(int sum) {
         List<Integer> arr = new ArrayList<>();
@@ -61,22 +79,6 @@ public class Combination2 {
     }
 
 
-    static void findNumbers(int k, List<List<Integer>> ans, List<Integer> arr, int sum, int index, List<Integer> temp) {
-        if (sum == 0) {
-            if (temp.size() == k) {
-                ans.add(new ArrayList<>(temp));
-            }
-            return;
-        }
-
-        for (int i = index; i < arr.size(); i++) {
-            if ((sum - arr.get(i)) >= 0 && temp.size() < k) {
-                temp.add(arr.get(i));
-                findNumbers(k, ans, arr, sum - arr.get(i), i + 1, temp);
-                temp.remove(temp.size() - 1);
-            }
-        }
-    }
 
     static int sum(List<Integer> arr) {
         int total = 0;
